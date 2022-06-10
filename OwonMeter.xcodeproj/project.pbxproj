@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		912E7FEF28532E6700962A57 /* OwonMeterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E7FEE28532E6700962A57 /* OwonMeterApp.swift */; };
+		912E7FF128532E6700962A57 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E7FF028532E6700962A57 /* ScannerView.swift */; };
+		912E7FF328532E6900962A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912E7FF228532E6900962A57 /* Assets.xcassets */; };
+		912E7FF728532E6900962A57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912E7FF628532E6900962A57 /* Preview Assets.xcassets */; };
+		912E800128532E6900962A57 /* OwonMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E800028532E6900962A57 /* OwonMeterTests.swift */; };
+		912E800B28532E6900962A57 /* OwonMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E800A28532E6900962A57 /* OwonMeterUITests.swift */; };
+		912E800D28532E6900962A57 /* OwonMeterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E800C28532E6900962A57 /* OwonMeterUITestsLaunchTests.swift */; };
+		912E801D28532FC400962A57 /* OwonBLE in Frameworks */ = {isa = PBXBuildFile; productRef = 912E801C28532FC400962A57 /* OwonBLE */; };
+		912E801F2853554B00962A57 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E801E2853554B00962A57 /* ScannerViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		912E7FFD28532E6900962A57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 912E7FE328532E6700962A57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 912E7FEA28532E6700962A57;
+			remoteInfo = OwonMeter;
+		};
+		912E800728532E6900962A57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 912E7FE328532E6700962A57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 912E7FEA28532E6700962A57;
+			remoteInfo = OwonMeter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		912E7FEB28532E6700962A57 /* OwonMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwonMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		912E7FEE28532E6700962A57 /* OwonMeterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwonMeterApp.swift; sourceTree = "<group>"; };
+		912E7FF028532E6700962A57 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		912E7FF228532E6900962A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		912E7FF428532E6900962A57 /* OwonMeter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OwonMeter.entitlements; sourceTree = "<group>"; };
+		912E7FF628532E6900962A57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		912E7FFC28532E6900962A57 /* OwonMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwonMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		912E800028532E6900962A57 /* OwonMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwonMeterTests.swift; sourceTree = "<group>"; };
+		912E800628532E6900962A57 /* OwonMeterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwonMeterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		912E800A28532E6900962A57 /* OwonMeterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwonMeterUITests.swift; sourceTree = "<group>"; };
+		912E800C28532E6900962A57 /* OwonMeterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwonMeterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		912E801A28532F6E00962A57 /* OwonBLE */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OwonBLE; sourceTree = "<group>"; };
+		912E801E2853554B00962A57 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		912E7FE828532E6700962A57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912E801D28532FC400962A57 /* OwonBLE in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		912E7FF928532E6900962A57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		912E800328532E6900962A57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		912E7FE228532E6700962A57 = {
+			isa = PBXGroup;
+			children = (
+				912E7FED28532E6700962A57 /* OwonMeter */,
+				912E7FFF28532E6900962A57 /* OwonMeterTests */,
+				912E800928532E6900962A57 /* OwonMeterUITests */,
+				912E801928532F6E00962A57 /* Modules */,
+				912E7FEC28532E6700962A57 /* Products */,
+				912E801B28532FC400962A57 /* Frameworks */,
+			);
+			indentWidth = 4;
+			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
+		};
+		912E7FEC28532E6700962A57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				912E7FEB28532E6700962A57 /* OwonMeter.app */,
+				912E7FFC28532E6900962A57 /* OwonMeterTests.xctest */,
+				912E800628532E6900962A57 /* OwonMeterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		912E7FED28532E6700962A57 /* OwonMeter */ = {
+			isa = PBXGroup;
+			children = (
+				912E7FEE28532E6700962A57 /* OwonMeterApp.swift */,
+				912E7FF028532E6700962A57 /* ScannerView.swift */,
+				912E801E2853554B00962A57 /* ScannerViewModel.swift */,
+				912E7FF228532E6900962A57 /* Assets.xcassets */,
+				912E7FF428532E6900962A57 /* OwonMeter.entitlements */,
+				912E7FF528532E6900962A57 /* Preview Content */,
+			);
+			path = OwonMeter;
+			sourceTree = "<group>";
+		};
+		912E7FF528532E6900962A57 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				912E7FF628532E6900962A57 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		912E7FFF28532E6900962A57 /* OwonMeterTests */ = {
+			isa = PBXGroup;
+			children = (
+				912E800028532E6900962A57 /* OwonMeterTests.swift */,
+			);
+			path = OwonMeterTests;
+			sourceTree = "<group>";
+		};
+		912E800928532E6900962A57 /* OwonMeterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				912E800A28532E6900962A57 /* OwonMeterUITests.swift */,
+				912E800C28532E6900962A57 /* OwonMeterUITestsLaunchTests.swift */,
+			);
+			path = OwonMeterUITests;
+			sourceTree = "<group>";
+		};
+		912E801928532F6E00962A57 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				912E801A28532F6E00962A57 /* OwonBLE */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		912E801B28532FC400962A57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		912E7FEA28532E6700962A57 /* OwonMeter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 912E801028532E6900962A57 /* Build configuration list for PBXNativeTarget "OwonMeter" */;
+			buildPhases = (
+				912E7FE728532E6700962A57 /* Sources */,
+				912E7FE828532E6700962A57 /* Frameworks */,
+				912E7FE928532E6700962A57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OwonMeter;
+			packageProductDependencies = (
+				912E801C28532FC400962A57 /* OwonBLE */,
+			);
+			productName = OwonMeter;
+			productReference = 912E7FEB28532E6700962A57 /* OwonMeter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		912E7FFB28532E6900962A57 /* OwonMeterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 912E801328532E6900962A57 /* Build configuration list for PBXNativeTarget "OwonMeterTests" */;
+			buildPhases = (
+				912E7FF828532E6900962A57 /* Sources */,
+				912E7FF928532E6900962A57 /* Frameworks */,
+				912E7FFA28532E6900962A57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				912E7FFE28532E6900962A57 /* PBXTargetDependency */,
+			);
+			name = OwonMeterTests;
+			productName = OwonMeterTests;
+			productReference = 912E7FFC28532E6900962A57 /* OwonMeterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		912E800528532E6900962A57 /* OwonMeterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 912E801628532E6900962A57 /* Build configuration list for PBXNativeTarget "OwonMeterUITests" */;
+			buildPhases = (
+				912E800228532E6900962A57 /* Sources */,
+				912E800328532E6900962A57 /* Frameworks */,
+				912E800428532E6900962A57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				912E800828532E6900962A57 /* PBXTargetDependency */,
+			);
+			name = OwonMeterUITests;
+			productName = OwonMeterUITests;
+			productReference = 912E800628532E6900962A57 /* OwonMeterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		912E7FE328532E6700962A57 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					912E7FEA28532E6700962A57 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					912E7FFB28532E6900962A57 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 912E7FEA28532E6700962A57;
+					};
+					912E800528532E6900962A57 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 912E7FEA28532E6700962A57;
+					};
+				};
+			};
+			buildConfigurationList = 912E7FE628532E6700962A57 /* Build configuration list for PBXProject "OwonMeter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 912E7FE228532E6700962A57;
+			productRefGroup = 912E7FEC28532E6700962A57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				912E7FEA28532E6700962A57 /* OwonMeter */,
+				912E7FFB28532E6900962A57 /* OwonMeterTests */,
+				912E800528532E6900962A57 /* OwonMeterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		912E7FE928532E6700962A57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912E7FF728532E6900962A57 /* Preview Assets.xcassets in Resources */,
+				912E7FF328532E6900962A57 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		912E7FFA28532E6900962A57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		912E800428532E6900962A57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		912E7FE728532E6700962A57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912E7FF128532E6700962A57 /* ScannerView.swift in Sources */,
+				912E801F2853554B00962A57 /* ScannerViewModel.swift in Sources */,
+				912E7FEF28532E6700962A57 /* OwonMeterApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		912E7FF828532E6900962A57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912E800128532E6900962A57 /* OwonMeterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		912E800228532E6900962A57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912E800B28532E6900962A57 /* OwonMeterUITests.swift in Sources */,
+				912E800D28532E6900962A57 /* OwonMeterUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		912E7FFE28532E6900962A57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 912E7FEA28532E6700962A57 /* OwonMeter */;
+			targetProxy = 912E7FFD28532E6900962A57 /* PBXContainerItemProxy */;
+		};
+		912E800828532E6900962A57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 912E7FEA28532E6700962A57 /* OwonMeter */;
+			targetProxy = 912E800728532E6900962A57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		912E800E28532E6900962A57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		912E800F28532E6900962A57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		912E801128532E6900962A57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OwonMeter/OwonMeter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OwonMeter/Preview Content\"";
+				DEVELOPMENT_TEAM = GDDD8834V3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Wir brauchen das!";
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.nikolai-ruhe.OwonMeter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		912E801228532E6900962A57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OwonMeter/OwonMeter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OwonMeter/Preview Content\"";
+				DEVELOPMENT_TEAM = GDDD8834V3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Wir brauchen das!";
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.nikolai-ruhe.OwonMeter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		912E801428532E6900962A57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GDDD8834V3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.nikolai-ruhe.OwonMeterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OwonMeter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OwonMeter";
+			};
+			name = Debug;
+		};
+		912E801528532E6900962A57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GDDD8834V3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.nikolai-ruhe.OwonMeterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OwonMeter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OwonMeter";
+			};
+			name = Release;
+		};
+		912E801728532E6900962A57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GDDD8834V3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.nikolai-ruhe.OwonMeterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OwonMeter;
+			};
+			name = Debug;
+		};
+		912E801828532E6900962A57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GDDD8834V3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.nikolai-ruhe.OwonMeterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OwonMeter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		912E7FE628532E6700962A57 /* Build configuration list for PBXProject "OwonMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				912E800E28532E6900962A57 /* Debug */,
+				912E800F28532E6900962A57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		912E801028532E6900962A57 /* Build configuration list for PBXNativeTarget "OwonMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				912E801128532E6900962A57 /* Debug */,
+				912E801228532E6900962A57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		912E801328532E6900962A57 /* Build configuration list for PBXNativeTarget "OwonMeterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				912E801428532E6900962A57 /* Debug */,
+				912E801528532E6900962A57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		912E801628532E6900962A57 /* Build configuration list for PBXNativeTarget "OwonMeterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				912E801728532E6900962A57 /* Debug */,
+				912E801828532E6900962A57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		912E801C28532FC400962A57 /* OwonBLE */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OwonBLE;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 912E7FE328532E6700962A57 /* Project object */;
+}
