@@ -9,8 +9,9 @@ public struct Reading: CustomStringConvertible {
     var function: Function
     var options: Options
     var value: Int
+    var date: Date
 
-    init?(data: Data) {
+    init?(data: Data, date: Date = Date()) {
         guard data.count == 6 else { return nil }
         let firstWord = data[uint16At: 0]
         guard let scale = Scale(rawValue: (firstWord >> 3) & 0x07) else { return nil }
@@ -24,6 +25,7 @@ public struct Reading: CustomStringConvertible {
         let valueWord = data[uint16At: 2]
         let negative = valueWord >= 0x8000
         self.value = Int(valueWord & 0x7fff) * (negative ? -1 : 1)
+        self.date = date
     }
 
     public var description: String {

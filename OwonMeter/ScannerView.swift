@@ -22,7 +22,7 @@ struct DeviceView: View {
     }
 
     var body: some View {
-        ZStack {
+        VStack {
             if let reading = viewModel.reading {
                 Text(verbatim: "\(reading)").font(.largeTitle.monospacedDigit())
             } else {
@@ -62,18 +62,14 @@ final class DeviceViewModel: ObservableObject {
     var reading: Reading?
 
     init(device: OwonDevice) {
-        print(#function)
         self.device = device
     }
 
     func observeDevice() async {
-        print(#function)
         for await notification in NotificationCenter.default.notifications(named: .owonDeviceDidReadNewMeasurement) {
-            print("got notification")
+            if Task.isCancelled { break }
             guard notification.device === self.device else { continue }
-            print("device correct")
             reading = notification.reading
-            print("reading: \(reading)")
         }
     }
 }
@@ -82,7 +78,4 @@ struct OwonView_Previews: PreviewProvider {
     static var previews: some View {
         OwonView()
     }
-}
-
-extension OwonDevice: ObservableObject {
 }

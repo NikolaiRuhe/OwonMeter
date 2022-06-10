@@ -10,8 +10,8 @@ import CoreBluetooth
 ///
 /// Usage:
 ///
-///     let scanner = OwonScanner()
-///     scanner.isActive = true
+///     OwonScanner().shared.isActive = true
+
 public final class OwonScanner {
 
     public static let shared = OwonScanner()
@@ -30,8 +30,16 @@ public final class OwonScanner {
 
     func update() {
         guard centralManager.state == .poweredOn else { return }
-        centralManager.scanForPeripherals(withServices: [], options: nil)
-        print("start scanning for peripherals")
+        switch (centralManager.isScanning, isActive) {
+        case (false, true):
+            centralManager.scanForPeripherals(withServices: nil)
+            print("start scanning for peripherals")
+        case (true, false):
+            centralManager.stopScan()
+            print("stop scanning for peripherals")
+        default:
+            break
+        }
     }
 }
 
@@ -48,8 +56,9 @@ fileprivate extension OwonScanner {
         func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
             guard let scanner = scanner else { return }
             guard !scanner.examinedPeripherals.contains(peripheral) else { return }
-            print("did discover peripheral: \(peripheral)")
+//            print("did discover peripheral: \(peripheral)")
 
+            guard peripheral.delegate == nil else { return }
             peripheral.delegate = scanner.centralManagerDelegate
             scanner.examinedPeripherals.append(peripheral)
             scanner.centralManager.connect(peripheral, options: nil)
@@ -57,22 +66,27 @@ fileprivate extension OwonScanner {
 
         func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
             guard scanner != nil else { return }
-            print("did connect peripheral: \(peripheral)")
-            peripheral.discoverServices(nil)
+            if let delegate = peripheral.delegate as? ExtendedPeripheralDelegate {
+                delegate.didConnect()
+            } else {
+//                print("did connect peripheral: \(peripheral)")
+                peripheral.discoverServices(nil)
+            }
         }
 
         func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-            print("did fail to connect peripheral: \(peripheral)")
+//            print("did fail to connect peripheral: \(peripheral)")
             if peripheral.delegate === scanner?.centralManagerDelegate {
                 peripheral.delegate = nil
             }
         }
 
         func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-            print("did disconnect peripheral: \(peripheral)")
+//            print("did disconnect peripheral: \(peripheral)")
             if peripheral.delegate === scanner?.centralManagerDelegate {
                 peripheral.delegate = nil
             }
+            (peripheral.delegate as? ExtendedPeripheralDelegate)?.didDisconnect(error: error)
         }
 
         func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
