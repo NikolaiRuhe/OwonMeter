@@ -2,14 +2,21 @@ import Foundation
 
 
 /// One measurement, as read from OwonDevice.
-public struct Reading: CustomStringConvertible {
+public struct Reading: CustomStringConvertible, Identifiable {
 
-    var scale: Scale
-    var decimal: Int
-    var function: Function
-    var options: Options
-    var value: Int
-    var date: Date
+    static var runningID: Int = 0
+    static func nextID() -> Int {
+        defer { runningID += 1 }
+        return runningID
+    }
+
+    public var scale: Scale
+    public var decimal: Int
+    public var function: Function
+    public var options: Options
+    public var value: Int
+    public var date: Date
+    public var id: Int = Self.nextID()
 
     init?(data: Data, date: Date = Date()) {
         guard data.count == 6 else { return nil }
@@ -28,12 +35,14 @@ public struct Reading: CustomStringConvertible {
         self.date = date
     }
 
+    public var doubleValue: Double { Double(value) / pow(10, Double(decimal)) }
+
     public var description: String {
         if decimal >= 4 { return "Overload" }
         return "\(Double(value) / pow(10, Double(decimal))) \(scale)\(function)"
     }
 
-    enum Scale: UInt16, CustomStringConvertible {
+    public enum Scale: UInt16, CustomStringConvertible {
         case pico = 0
         case nano = 1
         case micro = 2
@@ -58,7 +67,7 @@ public struct Reading: CustomStringConvertible {
         }
     }
 
-    enum Function: UInt16, CustomStringConvertible {
+    public enum Function: UInt16, CustomStringConvertible {
         case voltageDC = 0
         case voltageAC = 1
         case amperesDC = 2
@@ -93,14 +102,18 @@ public struct Reading: CustomStringConvertible {
         }
     }
 
-    struct Options: OptionSet {
-        let rawValue: UInt16
+    public struct Options: OptionSet {
+        public init(rawValue: UInt16) {
+            self.rawValue = rawValue
+        }
 
-        static let hold = Options(rawValue: 0x01)
-        static let delta = Options(rawValue: 0x02)
-        static let lowBattery = Options(rawValue: 0x08)
-        static let min = Options(rawValue: 0x10)
-        static let max = Options(rawValue: 0x20)
+        public let rawValue: UInt16
+
+        public static let hold = Options(rawValue: 0x01)
+        public static let delta = Options(rawValue: 0x02)
+        public static let lowBattery = Options(rawValue: 0x08)
+        public static let min = Options(rawValue: 0x10)
+        public static let max = Options(rawValue: 0x20)
     }
 }
 

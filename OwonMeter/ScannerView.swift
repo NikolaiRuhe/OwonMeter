@@ -1,5 +1,7 @@
 import SwiftUI
 import OwonBLE
+import Charts
+
 
 struct OwonView: View {
     @StateObject var viewModel = ScannerViewModel()
@@ -27,6 +29,14 @@ struct DeviceView: View {
                 Text(verbatim: "\(reading)").font(.largeTitle.monospacedDigit())
             } else {
                 Text("nil")
+            }
+            Chart {
+                ForEach(viewModel.readings) { reading in
+                    BarMark(
+                        x: .value("time", reading.date),
+                        y: .value(String(describing: reading.function), reading.doubleValue)
+                    )
+                }
             }
         }
         .padding()
@@ -58,8 +68,10 @@ struct ScannerView: View {
 final class DeviceViewModel: ObservableObject {
     var device: OwonDevice
 
+    var reading: Reading? { readings.last }
+
     @Published
-    var reading: Reading?
+    var readings: [Reading] = []
 
     init(device: OwonDevice) {
         self.device = device
@@ -69,7 +81,7 @@ final class DeviceViewModel: ObservableObject {
         for await notification in NotificationCenter.default.notifications(named: .owonDeviceDidReadNewMeasurement) {
             if Task.isCancelled { break }
             guard notification.device === self.device else { continue }
-            reading = notification.reading
+            readings.append(notification.reading!)
         }
     }
 }

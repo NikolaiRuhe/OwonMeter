@@ -3,13 +3,14 @@ import CoreBluetooth
 import Combine
 
 
-public class OwonDevice: ObservableObject {
+public class OwonDevice: ObservableObject, Identifiable {
     fileprivate let peripheral: CBPeripheral
     fileprivate let commandCharacteristic: CBCharacteristic
     fileprivate let controlCharacteristic: CBCharacteristic
     fileprivate let measurementCharacteristic: CBCharacteristic
     fileprivate lazy var peripheralDelegate = { PeripheralDelegate(self) }()
 
+    public var id: UUID { peripheral.identifier }
     public static var all: [OwonDevice] = []
 
     @Published
