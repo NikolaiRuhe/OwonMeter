@@ -18,6 +18,8 @@ struct OwonView: View {
 
 struct DeviceView: View {
     @StateObject var viewModel: DeviceViewModel
+    @State var xScale: Double = 25
+    @State var xOffset: Double = 0
 
     init(device: OwonDevice) {
         _viewModel = StateObject(wrappedValue: DeviceViewModel(device: device))
@@ -31,12 +33,35 @@ struct DeviceView: View {
                 Text("nil")
             }
             Chart {
-                ForEach(viewModel.readings) { reading in
-                    BarMark(
+                ForEach(viewModel.readings.dropLast(Int(xOffset)).suffix(Int(xScale))) { reading in
+                    LineMark(
                         x: .value("time", reading.date),
                         y: .value(String(describing: reading.function), reading.doubleValue)
                     )
+                    .symbol(by: .value("Category", "Voltage DC"))
                 }
+            }
+            .chartYScale(domain: viewModel.range)
+            .chartLegend(.hidden)
+            HStack {
+                Slider(value: $xScale, in: 20...500) {
+                    Text("x scale")
+                } minimumValueLabel: {
+                    Text("20")
+                } maximumValueLabel: {
+                    Text("500")
+                }
+                Text("\(Int(xScale))")
+            }
+            HStack {
+                Slider(value: $xOffset, in: 0...1000) {
+                    Text("x offset")
+                } minimumValueLabel: {
+                    Text("0")
+                } maximumValueLabel: {
+                    Text("1000")
+                }
+                Text("\(Int(xScale))")
             }
         }
         .padding()
@@ -73,6 +98,9 @@ final class DeviceViewModel: ObservableObject {
     @Published
     var readings: [Reading] = []
 
+    @Published
+    var range = -1.0 ... 1.0
+
     init(device: OwonDevice) {
         self.device = device
     }
@@ -81,7 +109,15 @@ final class DeviceViewModel: ObservableObject {
         for await notification in NotificationCenter.default.notifications(named: .owonDeviceDidReadNewMeasurement) {
             if Task.isCancelled { break }
             guard notification.device === self.device else { continue }
-            readings.append(notification.reading!)
+            let reading = notification.reading!
+            readings.append(reading)
+            let value = reading.doubleValue
+            if range.contains(value) { continue }
+            if range.lowerBound < value {
+                range = range.lowerBound ... value
+            } else {
+                range = value ... range.upperBound
+            }
         }
     }
 }

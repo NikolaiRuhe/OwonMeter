@@ -35,7 +35,7 @@ public struct Reading: CustomStringConvertible, Identifiable {
         self.date = date
     }
 
-    public var doubleValue: Double { Double(value) / pow(10, Double(decimal)) }
+    public var doubleValue: Double { Double(value) / pow(10, Double(decimal)) * scale.factor }
 
     public var description: String {
         if decimal >= 4 { return "Overload" }
@@ -52,6 +52,7 @@ public struct Reading: CustomStringConvertible, Identifiable {
         case mega = 6
         case giga = 7
 
+        public var factor: Double { pow(10, 3 * (Double(rawValue) - 4)) }
         public var description: String {
             switch self {
 
